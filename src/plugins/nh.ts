@@ -1,6 +1,5 @@
 import Base, { Plugin, Options } from './base';
 import { MangaStatus, ErrorMessage } from '~/utils';
-// import { Platform } from 'react-native';
 import moment from 'moment';
 import * as cheerio from 'cheerio';
 
@@ -21,13 +20,11 @@ const PATTERN_SCRIPT = /window\._gallery = JSON\.parse\((.+)\);/;
 const PATTERN_PICTURE = /(.+)\/[0-9]+\..+$/;
 
 class NHentai extends Base {
-  constructor() {
-    // const userAgent =
-    //   Platform.OS === 'android'
-    //     ? 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36'
-    //     : 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148';
+  constructor({ OS }: InitPluginOptions) {
     const userAgent =
-      'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148';
+      OS === 'android'
+        ? 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36'
+        : 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148';
     super({
       score: 5,
       id: Plugin.NH,
@@ -331,4 +328,4 @@ class NHentai extends Base {
   };
 }
 
-export default new NHentai();
+export default NHentai;

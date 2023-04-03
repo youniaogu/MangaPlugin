@@ -16,7 +16,6 @@ const options = {
 async function watch() {
   const ctx = await esbuild.context(options);
   await ctx.watch();
-  console.log('watching...');
 }
 async function build() {
   await esbuild.build(options);

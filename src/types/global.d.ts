@@ -1,12 +1,4 @@
-import {
-  Sequence,
-  AsyncStatus,
-  MangaStatus,
-  ReaderMode,
-  ReaderDirection,
-  customTheme,
-  env,
-} from '~/utils';
+import { Sequence, AsyncStatus, MangaStatus, ReaderMode, ReaderDirection } from '~/utils';
 import { Plugin } from '~/plugins';
 
 declare global {
@@ -18,6 +10,10 @@ declare global {
     body?: FormData | Record<string, any>;
     headers?: Headers;
     timeout?: number;
+  }
+
+  interface InitPluginOptions {
+    OS: 'android' | 'ios';
   }
 
   type PartialOption<T, K extends string | number | symbol> = Omit<T, K> & {
@@ -178,6 +174,23 @@ declare global {
   }
 
   interface Window {
-    MangaPlugin: any;
+    __InitMangaPlugin__: (options: InitPluginOptions) => {
+      Plugin: typeof Plugin;
+      Options: typeof Options;
+      PluginMap: Map<Plugin, Base>;
+      combineHash: (id: Plugin, mangaId: string, chapterId?: string | undefined) => string;
+      splitHash: (hash: string) => [Plugin, string, string];
+      defaultPlugin: Plugin;
+      defaultPluginList: {
+        label: string;
+        name: string;
+        value: Plugin;
+        score: number;
+        href: string;
+        userAgent: string | undefined;
+        description: string;
+        disabled: boolean;
+      }[];
+    };
   }
 }

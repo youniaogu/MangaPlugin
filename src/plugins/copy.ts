@@ -158,7 +158,7 @@ class CopyManga extends Base {
     accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
   };
 
-  constructor() {
+  constructor(_options: InitPluginOptions) {
     const userAgent =
       'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
     super({
@@ -422,4 +422,4 @@ class CopyManga extends Base {
   };
 }
 
-export default new CopyManga();
+export default CopyManga;

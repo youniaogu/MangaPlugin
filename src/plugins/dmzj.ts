@@ -107,7 +107,7 @@ const PATTERN_MANGA_TITLE = /\/(.*)\//;
 const PATTERN_FULL_TIME = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 
 class DongManZhiJia extends Base {
-  constructor() {
+  constructor(_options: InitPluginOptions) {
     const userAgent =
       'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
     super({
@@ -392,4 +392,4 @@ class DongManZhiJia extends Base {
   };
 }
 
-export default new DongManZhiJia();
+export default DongManZhiJia;

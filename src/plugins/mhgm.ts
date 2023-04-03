@@ -92,7 +92,7 @@ const PATTERN_AUTHOR = /作者：(.*)/;
 const PATTERN_TAG = /类别：(.*)/;
 
 class ManHuaGuiMobile extends Base {
-  constructor() {
+  constructor(_options: InitPluginOptions) {
     const userAgent =
       'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
     super({
@@ -424,4 +424,4 @@ class ManHuaGuiMobile extends Base {
   };
 }
 
-export default new ManHuaGuiMobile();
+export default ManHuaGuiMobile;
