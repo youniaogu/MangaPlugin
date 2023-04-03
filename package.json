@@ -1,0 +1,39 @@
+{
+  "name": "mangaplugin",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "youniaogu (https://github.com/youniaogu)",
+  "repository": "https://github.com/youniaogu/MangaPlugin",
+  "scripts": {
+    "start": "NODE_ENV=dev node ./esbuild.mjs",
+    "build": "node ./esbuild.mjs",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "preinstall": "npx only-allow yarn"
+  },
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "blueimp-md5": "^2.19.0",
+    "cheerio": "^1.0.0-rc.12",
+    "crypto-js": "^4.1.1",
+    "lz-string": "^1.5.0",
+    "moment": "^2.29.4",
+    "query-string": "^8.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/base-64": "^1.0.0",
+    "@types/blueimp-md5": "^2.18.0",
+    "@types/cheerio": "^0.22.31",
+    "@types/crypto-js": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "esbuild": "^0.17.15",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "only-allow": "^1.1.1",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.3"
+  },
+  "license": "MIT"
+}
