@@ -8,9 +8,9 @@ const options = {
   target: 'esnext',
   platform: 'browser',
   loader: { '.ts': 'ts' },
-  minify: isDev,
+  minify: !isDev,
   logLevel: 'info',
-  outfile: 'dist/index.js',
+  outfile: 'dist/main.js',
 };
 
 async function watch() {
