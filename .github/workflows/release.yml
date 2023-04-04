@@ -29,4 +29,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./dist/main.js
+          files: |
+            ./dist/main.js
+            ./dist/main.es5.js

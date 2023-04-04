@@ -1,12 +1,12 @@
 {
   "name": "mangaplugin",
   "version": "0.1.0",
+  "type": "module",
   "main": "index.js",
   "author": "youniaogu (https://github.com/youniaogu)",
   "repository": "https://github.com/youniaogu/MangaPlugin",
   "scripts": {
-    "start": "NODE_ENV=dev node ./esbuild.mjs",
-    "build": "node ./esbuild.mjs",
+    "build": "node ./esbuild.js & rollup -c ./rollup.config.js --silent",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "preinstall": "npx only-allow yarn"
   },
@@ -20,6 +20,10 @@
     "query-string": "^8.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-terser": "^0.4.0",
     "@tsconfig/recommended": "^1.0.2",
     "@types/base-64": "^1.0.0",
     "@types/blueimp-md5": "^2.18.0",
@@ -33,6 +37,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "only-allow": "^1.1.1",
     "prettier": "^2.8.7",
+    "rollup": "^3.20.2",
     "typescript": "^5.0.3"
   },
   "license": "MIT"

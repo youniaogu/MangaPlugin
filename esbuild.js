@@ -6,7 +6,6 @@ const options = {
   entryPoints: ['src/index.ts'],
   bundle: true,
   target: 'esnext',
-  platform: 'browser',
   loader: { '.ts': 'ts' },
   minify: !isDev,
   logLevel: 'info',
